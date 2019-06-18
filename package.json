@@ -1,0 +1,40 @@
+{
+  "name": "@vijayyadav1002/bagira",
+  "version": "1.0.0",
+  "description": "Bagira CLI template tool",
+  "main": "src/index.js",
+  "bin": {
+    "@vijayyadav1002/bagira": "bin/bagira",
+    "bagira": "bin/bagira"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijayyadav1002/bagira.git"
+  },
+  "keywords": [
+    "cli",
+    "bagira"
+  ],
+  "author": "Vijay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vijayyadav1002/bagira/issues"
+  },
+  "homepage": "https://github.com/vijayyadav1002/bagira#readme",
+  "dependencies": {
+    "arg": "^4.1.0",
+    "chalk": "^2.4.2",
+    "esm": "^3.2.25",
+    "execa": "^1.0.0",
+    "inquirer": "^6.3.1",
+    "listr": "^0.14.3",
+    "ncp": "^2.0.0",
+    "pkg-install": "^1.0.0"
+  }
+}
