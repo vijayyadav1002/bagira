@@ -27,7 +27,7 @@ function parseArgumentsIntoOptions(rawArgs) {
 }
 
 async function promptForMissingOptions(options) {
-    const defaultTemplate = 'React';
+    const defaultTemplate = 'REACT-JEST-PARCEL-BOILERPLATE';
     if (options.skipPrompts) {
         return {
             ...options,
@@ -41,7 +41,7 @@ async function promptForMissingOptions(options) {
             type: 'list',
             name: 'template',
             message: 'Please choose which project template to use',
-            choices: ['React', 'NodeJS'],
+            choices: ['REACT-JEST-PARCEL-BOILERPLATE', 'NodeJS'],
             default: defaultTemplate,
         });
     }
