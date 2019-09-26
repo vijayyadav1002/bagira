@@ -41,7 +41,7 @@ async function promptForMissingOptions(options) {
             type: 'list',
             name: 'template',
             message: 'Please choose which project template to use',
-            choices: ['REACT-JEST-PARCEL-BOILERPLATE', 'NodeJS'],
+            choices: ['REACT-JEST-PARCEL-BOILERPLATE', 'REACT-REDUX-TODO', 'NodeJS'],
             default: defaultTemplate,
         });
     }
@@ -55,11 +55,32 @@ async function promptForMissingOptions(options) {
         });
     }
 
+    if (!options.runInstall) {
+        questions.push({
+            type: 'confirm',
+            name: 'runInstall',
+            message: 'Run install on the repository?',
+            default: false,
+        });
+    }
+
+    if (!options.name) {
+        questions.push({
+            type: 'input',
+            name: 'name',
+            message: 'Name of the project?',
+            default: '',
+        });
+    }
+
     const answers = await inquirer.prompt(questions);
+
     return {
         ...options,
         template: options.template || answers.template,
         git: options.git || answers.git,
+        runInstall: options.runInstall || answers.runInstall,
+        name: options.name || answers.name
     };
 }
 
