@@ -7,7 +7,9 @@
     "start": "parcel src/index.html --open",
     "build": "parcel build src/index.html --out-dir build",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "test:lint": "eslint src/ --ext .js",
+    "test:lint:fix": "eslint src/ --ext .js --fix"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +19,8 @@
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "prop-types": "latest"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
@@ -25,10 +28,14 @@
     "@babel/node": "^7.10.1",
     "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/preset-react": "^7.10.1",
+    "babel-eslint": "^8.2.6",
     "babel-jest": "^26.0.1",
     "cssnano": "^4.1.10",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.0.1",
     "parcel-bundler": "^1.12.4"

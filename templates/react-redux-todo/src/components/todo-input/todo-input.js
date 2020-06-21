@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { TodoInputContainer, TodoInputText, TodoSubmitButton } from './styles';
 
-export const TodoInput = (props) => {
+const TodoInput = (props) => {
   const [ todo, setTodo ] = useState('');
 
   const onSubmit = (e) => {
@@ -10,7 +11,7 @@ export const TodoInput = (props) => {
     setTodo('');
   };
 
-  const updateTodoText = ({target}) => {
+  const updateTodoText = ({ target }) => {
     setTodo(target.value);
   };
 
@@ -23,3 +24,9 @@ export const TodoInput = (props) => {
     </form>
   );
 };
+
+TodoInput.propTypes = {
+  addTodo: PropTypes.func
+};
+
+export { TodoInput };
