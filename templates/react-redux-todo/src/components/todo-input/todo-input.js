@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { TodoInputContainer, TodoInputText, TodoSubmitButton } from './styles';
 
 export const TodoInput = (props) => {
   const [ todo, setTodo ] = useState('');
@@ -15,8 +16,10 @@ export const TodoInput = (props) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <input type="text" onChange={updateTodoText} value={todo}/>
-      <button type="submit">Submit</button>
-    </form>  
+      <TodoInputContainer>
+        <TodoInputText onChange={updateTodoText} value={todo}/>
+        <TodoSubmitButton>Submit</TodoSubmitButton>
+      </TodoInputContainer>
+    </form>
   );
-}
+};
