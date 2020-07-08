@@ -7,9 +7,11 @@ import rootReducer from './reducers';
 
 const store = createStore(rootReducer);
 
-render(
+const renderAtRoot = () => render(
   <Provider store={store}>
     <Todo />
   </Provider>,
   document.getElementById('app')
 );
+
+export { renderAtRoot };

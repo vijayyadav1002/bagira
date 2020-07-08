@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Todo/> should render todo 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.h1>
+      Things to do
+    </styled.h1>
+    <Connect(TodoInput) />
+    <Connect(TodoList) />
+  </styled.div>
+</styled.div>
+`;
