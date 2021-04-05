@@ -1,7 +1,7 @@
 {
   "name": "@vijayyadav1002/bagira",
-  "version": "1.0.0",
-  "description": "Bagira CLI template tool",
+  "version": "1.0.1",
+  "description": "Bagira CLI template tool to create boilerplate for react apps",
   "main": "src/index.js",
   "bin": {
     "@vijayyadav1002/bagira": "bin/bagira",
@@ -19,9 +19,13 @@
   },
   "keywords": [
     "cli",
-    "bagira"
+    "bagira",
+    "react",
+    "redux",
+    "jest",
+    "parcel"
   ],
-  "author": "Vijay",
+  "author": "Vijay Yadav",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vijayyadav1002/bagira/issues"
