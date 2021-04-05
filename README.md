@@ -13,12 +13,17 @@ This template gives the boilerplate for react redux todo app.
 
 To start with:
 
-1. Clone the repository and run the below command:
+1. Do
+```bash
+npm i -g @vijayyadav1002/bagira
+```
+Or
+Clone the repository and run the below command:
 ```bash
 npm install -g ./
 ```
 2. The above command will install the bagira command globally into your system.
-3. You can just run command the below command to start with:
+3. You can just run the below command to start the cli tool:
 ```bash
 bagira
 ```
