@@ -11,7 +11,7 @@
     "access": "public"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -32,11 +32,18 @@
   },
   "homepage": "https://github.com/vijayyadav1002/bagira#readme",
   "dependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/node": "^7.13.13",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-env": "^7.14.0",
     "arg": "^4.1.0",
+    "babel-jest": "^26.6.3",
     "chalk": "^2.4.2",
     "esm": "^3.2.25",
     "execa": "^1.0.0",
     "inquirer": "^6.3.1",
+    "jest": "^26.6.3",
     "listr": "^0.14.3",
     "ncp": "^2.0.0",
     "pkg-install": "^1.0.0"
