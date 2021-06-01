@@ -11,7 +11,11 @@
     "access": "public"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/*": "prettier --write --ignore-unknown"
   },
   "repository": {
     "type": "git",
@@ -37,15 +41,24 @@
     "@babel/node": "^7.13.13",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/preset-env": "^7.14.0",
-    "arg": "^4.1.0",
     "babel-jest": "^26.6.3",
+    "jest": "^26.6.3",
+    "arg": "^4.1.0",
     "chalk": "^2.4.2",
     "esm": "^3.2.25",
     "execa": "^1.0.0",
     "inquirer": "^6.3.1",
-    "jest": "^26.6.3",
     "listr": "^0.14.3",
     "ncp": "^2.0.0",
     "pkg-install": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "2.3.0"
   }
 }
