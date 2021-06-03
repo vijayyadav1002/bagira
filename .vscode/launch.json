@@ -14,6 +14,18 @@
       "program": "${workspaceFolder}/bin/bagira",
       "stopOnEntry": true,
       "console": "integratedTerminal"
+    },
+    {
+      "name": "Launch via NPM",
+      "request": "launch",
+      "runtimeArgs": [
+        "test"
+      ],
+      "runtimeExecutable": "npm",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node"
     }
   ]
 }

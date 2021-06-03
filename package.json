@@ -12,7 +12,8 @@
   },
   "scripts": {
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint src/*"
   },
   "lint-staged": {
     "src/*": "prettier --write --ignore-unknown"
