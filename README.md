@@ -1,3 +1,4 @@
+[![Node.js CI](https://github.com/vijayyadav1002/bagira/actions/workflows/node.js.yml/badge.svg)](https://github.com/vijayyadav1002/bagira/actions/workflows/node.js.yml)
 # bagira
 Bagira CLI template tool. This is tool same as create react app. This tool gives you boilerplate for various project types. So far three project types has been implemented.
 
