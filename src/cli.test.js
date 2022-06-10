@@ -6,6 +6,7 @@ jest.mock('inquirer');
 jest.mock('./main.js');
 
 describe('Cli Test', () => {
+  const cwd = process.cwd();
   describe('createProject', () => {
     beforeEach(() => {
       jest.resetAllMocks();
@@ -50,12 +51,19 @@ describe('Cli Test', () => {
           message: 'Name of the project?',
           default: '',
         },
+        {
+          type: 'input',
+          name: 'targetDirectory',
+          message: 'Target directory?',
+          default: '',
+        },
       ]);
       expect(createProject).toHaveBeenCalledWith({
         git: '--git',
         name: 'test-project',
         runInstall: '--install',
         skipPrompts: false,
+        targetDirectory: '',
         template: 'REACT-JEST-PARCEL-BOILERPLATE',
       });
     });
@@ -68,9 +76,10 @@ describe('Cli Test', () => {
         runInstall: false,
         skipPrompts: true,
         template: 'REACT-JEST-PARCEL-BOILERPLATE',
+        targetDirectory: '',
       });
     });
-    test('Should call not ask question for template if given', async () => {
+    test('Should not ask question for template if given', async () => {
       await cli(['arg1', 'arg2', 'NodeJS']);
       expect(inquirer.prompt).toHaveBeenCalledWith([
         {
@@ -91,6 +100,12 @@ describe('Cli Test', () => {
           name: 'name',
           type: 'input',
         },
+        {
+          type: 'input',
+          name: 'targetDirectory',
+          message: 'Target directory?',
+          default: '',
+        },
       ]);
       expect(createProject).toHaveBeenCalledWith({
         git: '--git',
@@ -98,9 +113,10 @@ describe('Cli Test', () => {
         runInstall: '--install',
         skipPrompts: false,
         template: 'NodeJS',
+        targetDirectory: '',
       });
     });
-    test('Should call not ask any question if all the information is given', async () => {
+    test('Should not ask any question if all the information is given', async () => {
       await cli([
         'arg1',
         'arg2',
@@ -108,6 +124,7 @@ describe('Cli Test', () => {
         '--git',
         '--name=some-name',
         '--install',
+        `--target=${cwd}`,
       ]);
       expect(inquirer.prompt).toHaveBeenCalledWith([]);
       expect(createProject).toHaveBeenCalledWith({
@@ -116,6 +133,7 @@ describe('Cli Test', () => {
         runInstall: true,
         skipPrompts: false,
         template: 'NodeJS',
+        targetDirectory: cwd,
       });
     });
   });

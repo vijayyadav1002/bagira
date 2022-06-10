@@ -27,13 +27,20 @@ async function initGit(options) {
   return undefined;
 }
 
-export default async function createProject(options) {
-  options = {
-    ...options,
-    targetDirectory: path.resolve(
-      `${options.targetDirectory || process.cwd()}`,
-      options.name
-    ),
+export default async function createProject(inputOptions) {
+  const targetDirectoryBase = path.resolve(
+    `${inputOptions.targetDirectory || process.cwd()}`
+  );
+  try {
+    await access(targetDirectoryBase, fs.constants.R_OK);
+  } catch (err) {
+    console.error('%s Invalid targetDirectory', chalk.red.bold('ERROR'));
+    process.exit(1);
+  }
+
+  const options = {
+    ...inputOptions,
+    targetDirectory: path.resolve(targetDirectoryBase, inputOptions.name),
   };
 
   const templateDir = path.resolve(

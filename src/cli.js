@@ -10,9 +10,11 @@ function parseArgumentsIntoOptions(rawArgs) {
       '--yes': Boolean,
       '--install': Boolean,
       '--name': String,
+      '--target': String,
       '-g': '--git',
       '-y': '--yes',
       '-i': '--install',
+      '-t': '--target',
     },
     {
       argv: rawArgs.slice(2),
@@ -24,6 +26,7 @@ function parseArgumentsIntoOptions(rawArgs) {
     template: args._[0],
     runInstall: args['--install'] || false,
     name: args['--name'] || (args['--yes'] ? defaultProjectName : ''),
+    targetDirectory: args['--target'] || '',
   };
 }
 
@@ -74,6 +77,15 @@ async function promptForMissingOptions(options) {
     });
   }
 
+  if (!options.targetDirectory) {
+    questions.push({
+      type: 'input',
+      name: 'targetDirectory',
+      message: 'Target directory?',
+      default: '',
+    });
+  }
+
   const answers = await inquirer.prompt(questions);
 
   return {
@@ -82,6 +94,7 @@ async function promptForMissingOptions(options) {
     git: options.git || answers.git,
     runInstall: options.runInstall || answers.runInstall,
     name: options.name || answers.name,
+    targetDirectory: options.targetDirectory || answers.targetDirectory || '',
   };
 }
 

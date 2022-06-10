@@ -1,6 +1,6 @@
 {
   "name": "@vijayyadav1002/bagira",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Bagira CLI template tool to create boilerplate for react apps",
   "main": "src/index.js",
   "bin": {
